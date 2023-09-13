@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Inkers.ai_demoProject/static/css/main.d0cf5165.css",
+    "main.js": "/Inkers.ai_demoProject/static/js/main.9b3eba3f.js",
+    "static/js/787.5ac5bf7a.chunk.js": "/Inkers.ai_demoProject/static/js/787.5ac5bf7a.chunk.js",
+    "index.html": "/Inkers.ai_demoProject/index.html",
+    "main.d0cf5165.css.map": "/Inkers.ai_demoProject/static/css/main.d0cf5165.css.map",
+    "main.9b3eba3f.js.map": "/Inkers.ai_demoProject/static/js/main.9b3eba3f.js.map",
+    "787.5ac5bf7a.chunk.js.map": "/Inkers.ai_demoProject/static/js/787.5ac5bf7a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0cf5165.css",
+    "static/js/main.9b3eba3f.js"
+  ]
+}
