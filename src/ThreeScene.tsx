@@ -3,7 +3,8 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import Stats from 'three/examples/jsm/libs/stats.module'
+import Stats from 'three/examples/jsm/libs/stats.module';
+import { Matrix4, Vector3, Euler,Quaternion} from 'three';
 
 import './App.css';
 
@@ -69,6 +70,14 @@ function ThreeScene() {
     let controls: OrbitControls;
     const elm = document.getElementById('root');
 
+    const commonPosition = new Vector3(1, 2, 3); // Change as needed
+    const commonRotation = new Euler(Math.PI / 4, 0, 0); // Change as needed
+    const commonScale = new Vector3(2, 2, 2); // Change as needed
+
+    const commonMatrix = new Matrix4();
+    const quaternion = new Quaternion().setFromEuler(commonRotation);
+    commonMatrix.compose(commonPosition, quaternion, commonScale);
+
     useEffect(() => {
 
         Init();
@@ -119,7 +128,7 @@ function ThreeScene() {
             (gltf) => {
                 const model1 = gltf.scene;
                 model1.position.x = -2;
-                // model1.applyMatrix4(commonMatrix);
+                model1.applyMatrix4(commonMatrix);
                 scene.add(model1);
             },
             undefined,
@@ -135,7 +144,7 @@ function ThreeScene() {
             (gltf) => {
                 const model2 = gltf.scene;
                 model2.position.x = 2;
-                // model2.applyMatrix4(commonMatrix);
+                model2.applyMatrix4(commonMatrix);
                 scene.add(model2);
                 //camera.position.z = 5;
             },
